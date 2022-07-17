@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testng Cucumber Suite">
+    <parameter name="testEnvironment" value="ST"/> <!-- ST or SIT -->
+    <parameter name="platform" value="Desktop"/>
+    <test name="ST Regression">
+        <parameter name="browserType" value="Chrome"/> <!-- Chrome or Firefox or IE or Edge-->
+          <classes>
+             <class name="Googletest.GmailTest"/>
+             <class name="Googletest.MapsTest"/>
+             <class name="Googletest.ImagesTest"/>
+             <class name="Googletest.partialIncludedClass">
+                <methods>
+                    <exclude name="testMethod3"></exclude>
+                    <include name="testMethod4"></include>
+                </methods>
+            </class>
+          </classes>
+    </test>
+</suite>
